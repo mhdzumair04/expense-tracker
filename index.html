@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Expense Tracker</h1>
+            <p>Keep track of where your money goes.</p>
+        </header>
+
+        <main>
+            <section class="summary">
+                <div class="summary-card">
+                    <h2>Total Expenses</h2>
+                    <p id="total-expenses">LKR 0.00</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2>Number of Expenses</h2>
+                    <p id="expense-count">0</p>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Add a New Expense</h2>
+
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="expense-name">Expense Name</label>
+                        <input
+                            type="text"
+                            id="expense-name"
+                            placeholder="e.g. Groceries"
+                            maxlength="60"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-amount">Amount (LKR)</label>
+                        <input
+                            type="number"
+                            id="expense-amount"
+                            placeholder="e.g. 1500"
+                            min="0.01"
+                            max="1000000000"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-category">Category</label>
+                        <select id="expense-category" required>
+                            <option value="">Select a category</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-date">Date</label>
+                        <input type="date" id="expense-date" required>
+                    </div>
+
+                    <button type="submit" class="add-button">
+                        Add Expense
+                    </button>
+
+                    <p id="form-message" class="form-message" aria-live="polite"></p>
+                </form>
+            </section>
+
+            <section class="expenses-section">
+                <div class="expenses-heading">
+                    <h2>My Expenses</h2>
+
+                    <div class="filter-group">
+                        <label for="category-filter">Filter:</label>
+                        <select id="category-filter">
+                            <option value="All">All Categories</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p id="expense-list-message" class="list-message">
+                    No expenses yet. Add your first expense above.
+                </p>
+
+                <ul id="expense-list" class="expense-list"></ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>My Expense Tracker | Built with HTML, CSS and JavaScript</p>
+        </footer>
+    </div>
+</body>
+</html>
